@@ -1,0 +1,23 @@
+{
+  "name": "hexo-related-posts-bysk",
+  "version": "1.0.0",
+  "description": "A plugin for Hexo to list related posts, written by Sukwants.",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sukwants/hexo-related-posts-bysk.git"
+  },
+  "keywords": [
+    "Hexo", 
+    "Sukwants"
+  ],
+  "author": "Sukwants",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sukwants/hexo-related-posts-bysk/issues"
+  },
+  "homepage": "https://github.com/Sukwants/hexo-related-posts-bysk#readme",
+  "dependencies": {
+    "lodash.assign": "^3.2.0"
+  }
+}
