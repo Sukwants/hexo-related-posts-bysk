@@ -6,6 +6,8 @@ A plugin for Hexo to list related posts, written by Sukwants.
 
 It chooses related posts through tags and categories. First, sort by the number of same tags and categories with the post. Then, sort by the ways you set.
 
+You can choose to exclude specific tags or categories from the post's relevance calculation.
+
 ## Install
 
 ```sh
@@ -15,8 +17,9 @@ $ npm install hexo-related-posts-bysk --save
 ## Usage
 
 In file `themes/next/layout/_partials/post/post-related.njk`, replace all with
+
 ```njk
-{% set related_post =  related_posts_bysk(post, {maxCount: theme.related_posts.max_count, orderBy: theme.related_posts.order_by, order: theme.related_posts.order}) %}
+{% set related_post =  related_posts_bysk(post, {maxCount: theme.related_posts.max_count, orderBy: theme.related_posts.order_by, order: theme.related_posts.order, excludeTags: theme.related_posts.exclude.tags, excludeCategories: theme.related_posts.exclude.categories}) %}
 {% if related_post.length > 0 %}
   <div class="popular-posts-header">{{ theme.related_posts.title or __('post.related_posts') }}</div>
   <ul class="related-posts">
@@ -27,7 +30,7 @@ In file `themes/next/layout/_partials/post/post-related.njk`, replace all with
 {% endif %}
 ```
 
-In file `themes/next/_config.yml`, rewrite what's below `related_posts`
+In file `themes/next/_config.yml`, rewrite what's below `related_posts` with
 
 ```yml
 # List related posts, written by Sukwants
@@ -40,6 +43,11 @@ related_posts:
   order_by: 'date'
   #order: 'positive'
   order: 'negative'
+  exclude:
+    tags:
+      #- 'some tags'
+    categories:
+      #- 'some categories'
 ```
 
 Modify `enable` to turn on or turn off this function.
@@ -53,3 +61,5 @@ Modify `max_count` to adjust the upper limit of the number of related posts.
 Modify `order_by` to set the sort by of related posts. You can choose `'date'`,`'updated'`,`'title'`,`'random'`. The default choice is `'date'`.
 
 Choose the value of `order` between `'positive'` and `'negative'` to set the order of related posts. The default choice is `'negative'`.
+
+Below `exclude`, list the tags you don't want included in the post's relevance calculation below `tags`, and list the categories you don't want included below `categories`.
