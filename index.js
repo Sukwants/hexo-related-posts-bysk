@@ -1,3 +1,13 @@
+/******** Hexo Plugin: hexo-related-posts-bysk ******** 
+ *    _____       _                         _         * 
+ *   / ____|     | |                       | |        * 
+ *  | (___  _   _| | ____      ____ _ _ __ | |_ ___   * 
+ *   \___ \| | | | |/ /\ \ /\ / / _` | '_ \| __/ __|  * 
+ *   ____) | |_| |   <  \ V  V / (_| | | | | |_\__ \  * 
+ *  |_____/ \__,_|_|\_\  \_/\_/ \__,_|_| |_|\__|___/  * 
+ *                                                    * 
+ ****************** Made By Sukwants ******************/
+
 var assign = require('lodash.assign');
 
 function addCount(array, searchProperty, newProperty) {
@@ -118,4 +128,3 @@ hexo.extend.helper.register('related_posts_bysk', function(post, options, hexo) 
 
    return  relatedPostsBySk(post, options, hexo);
 });
-                            
